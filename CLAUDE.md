@@ -14,6 +14,7 @@ cc-deploy-servers/
 ├── .claude/
 │   └── skills/
 │       └── firewalld-setup.md   # スキル定義（正本）
+├── docs/                        # 補足ドキュメント
 ├── scripts/
 │   ├── collect_state.sh         # Phase 2: firewalld現状取得（非破壊）
 │   ├── build_commands.py        # Phase 3: コマンド生成 + lockoutチェック（非破壊）
@@ -25,7 +26,9 @@ cc-deploy-servers/
 │   ├── param_sheet_template.yaml        # パラメータシートひな形
 │   ├── evidence_template.md             # エビデンスレポートひな形
 │   └── integration_tests_template.yaml  # 結合試験定義ひな形
-└── evidence/                    # 実行ログ・試験結果・レポートの出力先
+├── evidence/                    # 実行ログ・試験結果・レポートの出力先
+├── CLAUDE.md                    # このファイル（Claude Code 向けプロジェクト概要）
+└── README.md
 ```
 
 ## 重要な制約

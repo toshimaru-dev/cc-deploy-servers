@@ -4,7 +4,7 @@
 
 ## 概要
 
-`/firewalld-setup` スキルを使って、以下のフローを対話形式で進める。
+`firewalld-setup` スキルを使って、以下のフローを対話形式で進める。
 
 ```
 Phase 1  パラメータ確定（対話でYAMLを埋める）
@@ -63,11 +63,7 @@ pip install pyyaml
 
 ## 使い方
 
-Claude Code で以下を入力するとスキルが起動する。
-
-```
-/firewalld-setup
-```
+Claude Code で「firewalldを設定したい」「ポートを開放したい」などと話しかけるとスキルが自動起動する。
 
 Phase 1 の確認事項に答えながら対話形式で進める。
 スキルの詳細な仕様・原則は [.claude/skills/firewalld-setup.md](./.claude/skills/firewalld-setup.md) を参照。
