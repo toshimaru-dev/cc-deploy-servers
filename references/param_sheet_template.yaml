@@ -1,0 +1,28 @@
+# firewalld パラメータシート テンプレート
+# このファイルをコピーして作業ごとに埋める。
+# 空欄（null / []）のままPhase 2へ進まないこと（原則2）。
+
+host:
+  name:      null          # ホスト名（エビデンス記録用）  例: web01
+  ip:        null          # IPアドレス（エビデンス記録用） 例: 10.0.0.11
+  ssh_alias: null          # ~/.ssh/config の Host名        例: web01
+
+default_zone: null         # デフォルトzone名               例: public
+
+zones:
+  - name: null             # zone名                         例: public
+    interfaces: []         # バインドするNIC名              例: [eth0]
+    sources:    []         # 許可するIP/CIDR                例: [10.0.0.0/24]
+    services:   []         # 許可するservice名              例: [ssh, http, https]
+    ports:      []         # 許可するport/proto             例: [8080/tcp, 443/tcp]
+    rich_rules: []         # rich-rule文字列リスト          例: []
+    target:     default    # default / ACCEPT / REJECT / DROP
+
+# 複数zoneを設定する場合は zones: 以下にリストで追記
+#  - name: internal
+#    interfaces: [eth1]
+#    sources:    []
+#    services:   [ssh, http]
+#    ports:      []
+#    rich_rules: []
+#    target:     default

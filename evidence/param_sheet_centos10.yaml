@@ -1,0 +1,16 @@
+host:
+  name:      centos10
+  ip:        192.168.0.31
+  ssh_alias: centos10
+
+default_zone: public
+
+zones:
+  - name: public
+    interfaces: [ens3]
+    sources:    []
+    services:   [cockpit, dhcpv6-client]
+    ports:      []
+    rich_rules:
+      - 'rule family="ipv4" source address="192.168.0.174/32" service name="ssh" accept'
+    target: default

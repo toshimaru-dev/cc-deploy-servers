@@ -1,0 +1,34 @@
+# 結合試験定義テンプレート
+# run_integration.sh --tests <このファイル> で使用する
+# expect: reachable（到達できる）/ unreachable（遮断される）
+
+- port: 22
+  proto: tcp
+  expect: reachable
+  description: SSH（管理アクセス）
+
+- port: 80
+  proto: tcp
+  expect: reachable
+  description: HTTP
+
+- port: 443
+  proto: tcp
+  expect: reachable
+  description: HTTPS
+
+- port: 8080
+  proto: tcp
+  expect: reachable
+  description: アプリHTTP
+
+# 遮断確認の例（許可していないポート）
+# - port: 3306
+#   proto: tcp
+#   expect: unreachable
+#   description: MySQL（外部からの直接接続を遮断）
+#
+# - port: 5432
+#   proto: tcp
+#   expect: unreachable
+#   description: PostgreSQL（外部からの直接接続を遮断）
